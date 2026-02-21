@@ -32,6 +32,9 @@ Plaintext
 ├── PhysioAppGUI.py             # CustomTkinter Dashboard with Threading
 ├── pose_landmarker_lite.task   # MediaPipe optimized model file
 └── requirements.txt            # Project dependencies
+
+Note: The 'pose_landmarker_lit.task' file is a light-version API of Google's MediaPipe module. To run this module, you would need to use any of the three '.task' files in your system, as explained in the diagram above. Furthermore, two versions of this API are included in this repository.
+
 ⚙️ Installation & Setup
 Clone the Repository
 
