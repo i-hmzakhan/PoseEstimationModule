@@ -36,7 +36,7 @@ Plaintext
 Clone the Repository
 
 Bash
-git clone https://github.com/YourUsername/PoseEstimationModule.git
+git clone (https://github.com/i-hmzakhan/PoseEstimationModule)
 cd PoseEstimationModule
 Setup Virtual Environment
 
