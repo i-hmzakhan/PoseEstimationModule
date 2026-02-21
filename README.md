@@ -50,31 +50,32 @@ pip install -r requirements.txt
 Download the Task Model
 Download the pose_landmarker_lite.task file from the Official MediaPipe Site and place it in the root directory.
 
-💻 Quick Start
-Basic Detection
-Python
-import cv2
-import PoseModule as pm
+💡 What can you build with this module?
+Because of its modular design and built-in geometric logic, this repository can serve as the core engine for several Computer Vision applications:
 
-cap = cv2.VideoCapture(0)
-detector = pm.PoseDetector()
+1. AI Fitness Trainer
+Rep Counter: Automatically count squats, push-ups, or bicep curls using the find_angle method.
 
-while True:
-    success, frame = cap.read()
-    frame = detector.find_pose(frame, timestamp_ms=int(time.time()*1000))
-    lmList = detector.get_positions(frame)
-    
-    cv2.imshow("Image", frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-Bicep Curl Angle Calculation
-Python
-# Calculate angle for Left Arm (Shoulder: 11, Elbow: 13, Wrist: 15)
-angle = detector.find_angle(frame, 11, 13, 15)
-reps = detector.rep_counter(angle, side="L")
-📊 Roadmap
-[ ] Multi-Person Support: Enabling tracking for multiple bodies in a single frame.
+Form Correction: Compare live joint angles against "perfect form" thresholds and provide real-time audio/visual alerts if the user is leaning too far or not reaching full depth.
 
+2. Physical Therapy Assistant
+Range of Motion (ROM) Tracking: Measure the maximum extension and flexion of a joint over time to track recovery progress after surgery or injury.
+
+Posture Monitor: Use the shoulder and hip landmarks to detect "slouching" while working at a desk and trigger a Windows notification to sit up straight.
+
+3. Gesture-Based Control (HCI)
+Touchless Interface: Map the coordinates of the wrists (Landmarks 15 & 16) to the system mouse cursor to navigate OS menus without a physical mouse.
+
+Virtual Gaming: Trigger game actions (like jumping or punching) when specific pose conditions are met (e.g., if y-coordinate of hips increases by 20%).
+
+4. Sports Analytics
+Bowling/Swing Analysis: Analyze the velocity and angle of an arm during a cricket bowl or a golf swing by calculating the change in joint coordinates across frames.
+
+Yoga Alignment: Verify if a user is holding a pose (like the Warrior Pose) by checking the alignment of the ankles, knees, and shoulders.
 [ ] Squat Depth Analysis: Adding hip-to-ankle angle logic.
-
 [ ] Export Functionality: Saving workout data to .csv or .json.
+
+
+[P.S. If you're interested in the above-mentioned projects, you would only need to add functions/methods for them in the module file and call them in your main function. (For example, the biceps curl counter has already been added to the module).]
+
+
